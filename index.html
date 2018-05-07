@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Radio Haryanvi App</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" title="Radio Haryanvi">
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<meta charset="utf-8">
+	<style type="text/css">	
+		#playcontrols {
+			text-align: center;
+			margin-top: 50px;
+		}
+		#playcontrols #activityindicator, #playcontrols #stopbutton {
+			display: none;
+		}
+		
+		#textpositiondiv {
+			margin-top: 100px;
+		}
+	   .body
+        {
+            text-align: center;
+            background: #581845;
+		    color: white;
+        }
+	</style>
+	<script type="text/javascript" charset="utf-8" src="scripts/html5audio.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+ <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102621278-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-102621278-5');
+</script>
+
+  </head>
+  <body>
+      <button type="button" class="button"><img src="images/favicon.png" alt="Radio Haryanvi Logo" width="40px" height="20px"></button>
+	  <h2>Radio Haryanvi</h2>
+      <h2>Apni Sanskriti - Apni Virasat</h2>
+  	  <div id="playcontrols">
+		  <a href="#" id="playbutton" onClick="html5audio.play();return false;"><img src="images/playbutton.png" /></a>
+		  <a href="#" id="activityindicator" onClick="html5audio.stop();return false;"><img src="images/activityindicator.gif" /></a>
+		  <a href="#" id="stopbutton" onClick="html5audio.stop();return false;"><img src="images/stopbutton.png" /></a>
+	  </div>
+	  <div id="textpositiondiv">कितना टाइम सुण लिया: <span id="textposition">चला लो</span></div>
+	  <p><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" title="Radio Haryanvi Songs/Ragni Request">फरमाइश भेज दो</button></p>
+	  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"><!--Request Popup Form Starts-->
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>अपणी फरमाइश देओ उरे</h3>
+                                <h4>*सारी डिटेल्स सही भरियो</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form action="http://www.SnapHost.com/captcha/send.aspx" id="ContactUsCaptchaWebForm" method="post" onsubmit="return ValidateForm(this);" target="_top">
+                                    <input name="skip_WhereToSend" type="hidden" value="radioharyanvi@gmail.com" />
+                                    <input name="skip_SnapHostID" type="hidden" value="SB46GB4XUNPG" />
+                                    <input name="skip_WhereToReturn" type="hidden" value="http://www.weareharyanvi.com" />
+                                    <input name="skip_Subject" type="hidden" value="Song Request" />
+                                    <input name="skip_ShowUsersIp" type="hidden" value="1" />
+                                    <input name="skip_SendCopyToUser" type="hidden" value="1" />
+                                    <script type="text/javascript">
+                                    function ValidateForm(frm) {
+                                    if (frm.Name.value == "") {alert('नाम भी घणा जरुरी है जी नाम बिना के स धरती पे');frm.Name.focus();return false;}
+                                    if (frm.PhoneNumber.value == "") {alert('फ़ोन नंबर बिना आपकी फरमाइश का टाइम कैसे बतावांगे');frm.PhoneNumber.focus();return false;}
+                                    if (frm.Comments.value == "") {alert('फरमाइश और गायक का नाम तो भरा कोनी जी');frm.Comments.focus();return false;}
+                                    if (frm.skip_CaptchaCode.value == "") {alert('कैप्चा करना भी जरुरी स यो आपकी सिक्योरिटी खातिर स');frm.skip_CaptchaCode.focus();return false;}
+                                    return true; }
+                                    function ReloadCaptchaImage(captchaImageId) {
+                                    var obj = document.getElementById(captchaImageId);
+                                    var src = '' + obj.src;
+                                    obj.src = '';
+                                    var date = new Date();
+                                    var pos = src.indexOf('&rad=');
+                                    if (pos >= 0) { src = src.substr(0, pos); }
+                                    obj.src = src + '&rad=' + date.getTime();
+                                    return false; }
+                                    </script>
+                                    <table border="0" cellpadding="5" cellspacing="0" width="400">
+                                    <tr>
+                                    <td><b>नाम :-</b></td>
+                                    <td><input name="Name" type="text" maxlength="60" style="width:200px;" placeholder="अपना नाम भर दो जी" /></td>
+                                    </tr><tr>
+                                    <td><b>फ़ोन नंबर :-</b></td>
+                                    <td><input name="PhoneNumber" type="text" maxlength="43" style="width:200px;" placeholder="अपना मोबाइल नंबर भर दो जी" /></td>
+                                    </tr><tr>
+                                    <td><b>ईमेल :-</b></td>
+                                    <td><input name="FromEmailAddress" type="text" maxlength="60" style="width:200px;" placeholder="अपना ईमेल भर दो जी" /></td>
+                                    </tr><tr>
+                                    <td><b>फरमाइश :-</b></td>
+                                    <td><textarea name="Comments" rows="7" cols="40" style="width:200px;" placeholder="अपनी फरमाइश और साथ में गायक का नाम जरुरी है"></textarea></td>
+                                    </tr><tr>
+                                    <td colspan="2" align="center"> <br />
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr><td colspan="2" style="padding-bottom:18px;">
+                                    <!-- Please check our ProCaptcha service which is ad-free:
+                                    http://www.SnapHost.com/captcha/ProCaptchaOverview.aspx -->
+                                    <a href="http://www.snaphost.com/captcha" alt="capcha" title="capcha">
+                                    capcha</a></td></tr>
+                                    <tr valign="top"><td> <i></i>
+                                    <input name="skip_CaptchaCode" type="text" style="width:80px;" maxlength="6" />
+                                    <br/>
+                                    </td><td>
+                                    <a href="http://www.snaphost.com/captcha/ReadyForms/ContactUsForm.aspx"><img id="CaptchaImage" alt="Contact Us form" title="Radio Haryana"
+                                    style="margin-left:20px;"
+                                    src="http://www.SnapHost.com/captcha/CaptchaImage.aspx?id=SB46GB4XUNPG&ImgType=2" /></a><br />
+                                    <a href="#" onclick="return ReloadCaptchaImage('CaptchaImage');"><span style="font-size:12px;">कोनी समझ आया के ?</span></a> </td></tr>
+                                    </table> <br />
+                                    सारी चीज सही भरिओ जी  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                    <br />
+                                    <input name="skip_Submit" type="submit" value="भेज दो" />
+                                    </td></tr>
+                                    </table><br />
+                                </form>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">जी कोनी करदा</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+	  <script type="text/javascript">
+		  playButton = document.getElementById('playbutton');
+		  stopButton = document.getElementById('stopbutton');
+		  activityIndicator = document.getElementById('activityindicator');
+		  textPosition = document.getElementById('textposition');
+	  </script>
+  </body>
+</html>
